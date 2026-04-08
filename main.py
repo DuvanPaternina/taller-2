@@ -65,3 +65,5 @@ while True:
     elif comando == "5" or comando.lower().strip() == "salir":
         print("Saliendo del programa...")
         break
+    
+# aahdwadsyasydadsyd
