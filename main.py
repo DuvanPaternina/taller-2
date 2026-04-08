@@ -25,6 +25,14 @@ class ListaProductos():
         else:
             print("Producto no válido. No se agregó a la lista.")
 
+    def mostrar_productos(self):
+        if self.productos:
+            print("Productos registrados:")
+            for producto in self.productos:
+                print(producto)
+        else:
+            print("No hay productos registrados.")
+
 ListaProductos1 = ListaProductos()
 comando = ""
 while True:
@@ -47,8 +55,8 @@ while True:
         input("Presione Enter para continuar...")
 
     elif comando == "2":
-        for producto in ListaProductos1.productos:
-            print(producto)
+        ListaProductos1.mostrar_productos()
+        input("Presione Enter para continuar...")
 
     elif comando == "3":
         pass
