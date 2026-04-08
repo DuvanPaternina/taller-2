@@ -15,15 +15,37 @@
  * Filtrado dinámico por umbral de precio (Punto 4).
  * **Interfaz de Usuario:** Menú interactivo con validaciones básicas.
 
-## Instrucciones de Ejecución
+##  Arquitectura del Software
+El sistema está diseñado bajo un modelo de capas lógicas para facilitar el mantenimiento y la escalabilidad:
 
-Siga estos pasos para poner en marcha el proyecto:
+### 1. Clase `Producto` (Entidad)
+Representa la unidad básica de información. 
+* **Atributos:** `nombre` (string) y `precio` (float).
+* **Métodos:** Implementa `__str__` para garantizar una representación legible de los datos al usuario final.
 
-### 1. Requisitos Previos
- Tener instalado **Python 3.10** o superior.
+### 2. Clase `ListaProductos` (Gestor de Datos)
+Funciona como el controlador central del inventario. Sus métodos principales incluyen:
+* **`agregar_producto`**: Valida que no existan registros nulos o duplicados antes de la inserción.
+* **`sumar_precios`**: Realiza una operación de agregación sobre el arreglo de productos para devolver el valor total de la inversión.
+* **`productos_mayores_a_precio`**: Implementa una estructura de filtrado (List Comprehension) para segmentar el inventario según criterios económicos.
 
-### 2. Clonación y Acceso
- Desde su terminal o Git Bash, ejecute:
- ```bash
- git clone [https://github.com/DuvanPaternina/taller-2.git](https://github.com/DuvanPaternina/taller-2.git)
- cd taller-2
+---
+
+##  Especificaciones Técnicas
+* **Lenguaje:** Python 3.10 o superior.
+* **Entorno:** Consola / Terminal.
+* **Control de Versiones:** Git con flujo de trabajo basado en **Feature Branches** (`rama-juan-moreno-taller`).
+* **Editor:** Visual Studio Code.
+
+---
+
+##  Guía de Instalación y Despliegue
+
+### Requisitos Mínimos
+* Tener instalado el intérprete de PPython
+* Git configurado en el sistema local.
+
+### Paso 1: Clonación del Repositorio
+Obtenga una copia local del proyecto utilizando:
+```bash
+git clone [https://github.com/DuvanPaternina/taller-2.git](https://github.com/DuvanPaternina/taller-2.git)
