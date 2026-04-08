@@ -33,11 +33,24 @@ class ListaProductos():
         else:
             print("No hay productos registrados.")
 
+    def sumar_precios(self):
+        total = sum(producto.precio for producto in self.productos)
+        print(f"Total de la compra: ${total}")
+
+    def productos_mayores_a_precio(self, precio):
+        productos_filtrados = [producto for producto in self.productos if producto.precio > precio]
+        if productos_filtrados:
+            print(f"Productos con precio mayor a ${precio}:")
+            for producto in productos_filtrados:
+                print(producto)
+        else:
+            print(f"No hay productos con precio mayor a ${precio}.")
+
 ListaProductos1 = ListaProductos()
 comando = ""
 while True:
     print("""
-    1. Permitir agregar productos a una lista
+    1. agregar productos a una lista
     2. Mostrar todos los productos registrados
     3. Calcular el total de la compra
     4. Mostrar productos que cumplan una condición (por ejemplo: mayores a cierto precio)
@@ -59,11 +72,15 @@ while True:
         input("Presione Enter para continuar...")
 
     elif comando == "3":
-        pass
+        ListaProductos1.sumar_precios()
+        input("Presione Enter para continuar...")
+
     elif comando == "4":
-        pass
+        precio = float(input("Ingrese el precio para filtrar los productos: "))
+        ListaProductos1.productos_mayores_a_precio(precio)
+        input("Presione Enter para continuar...")
+        
     elif comando == "5" or comando.lower().strip() == "salir":
         print("Saliendo del programa...")
         break
     
-# aahdwadsyasydadsyd
