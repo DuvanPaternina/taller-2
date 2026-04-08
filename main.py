@@ -43,7 +43,8 @@ while True:
         input("Presione Enter para continuar...")
 
     elif comando == "2":
-        pass
+        for producto in nuevo_producto.lista_productos:
+            print(producto)
 
     elif comando == "3":
         pass
